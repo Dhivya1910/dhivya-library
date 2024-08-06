@@ -1,6 +1,6 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+// import TheWelcome from './components/TheWelcome.vue'
 import Json from "./components/JSON.vue";
 import Form from "./components/Form.vue"
 import bookstores from "./components/JSON.vue"
