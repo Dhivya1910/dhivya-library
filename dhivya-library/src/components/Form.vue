@@ -6,12 +6,12 @@
         <input type = "text" id = "username" name="username"><br>
 
         <label for = "password">Password: </label><br>
-        <input type = "password" id = "p1" name="p1"><br>
+        <input type = "password" id = "password" name="password"><br>
 
         <label for = "isAustralian">Australian Resident? </label><br>
         <input type = "checkbox" id = "isAustralian" name="isAustralian"><br>
 
-        <label for = "reason">Reason fro joining: </label><br>
+        <label for = "reason">Reason for joining: </label><br>
         <textarea id = "reason" name = "reason" rows="3"></textarea><br>
 
         <label for = "gender">Gender: </label><br>
