@@ -41,9 +41,13 @@
                     </div>
                     <div class="row mb-3">
                         <div class="col-12">
-                            <label for="reason" class="form-label">Reason for joining:</label>
-                            <textarea id="reason" rows="3" class="form-control" v-model="formData.reason"></textarea>
-                        </div>
+    <label for="reason" class="form-label">Reason for joining:</label>
+    <textarea id="reason" rows="3" class="form-control"
+              @blur="validateReason(true)"
+              @input="validateReason(false)" v-model="formData.reason"></textarea>
+    <div v-if="errors.reason" class="text-danger">{{ errors.reason }}</div>
+</div>
+
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary me-2">Submit</button>
@@ -51,7 +55,7 @@
                     </div>
                 </form>
                 <!-- Add a custom class to create spacing between buttons and table -->
-                <DataTable class="datatable custom-datatable mt-4" :value="submittedCards">
+                <DataTable class="datatable custom-datatable mt-4" :value="submittedCards" >
                     <Column field="username" header="Username"></Column>
                     <Column field="password" header="Password"></Column>
                     <Column field="isAustralian" header="Resident"></Column>
@@ -82,7 +86,8 @@ const submitForm = () => {
     validateName(true);
     validatePassword(true);
     validateGender(true);
-    if (!errors.value.username && !errors.value.password && !errors.value.gender) {
+    validateReason(true);
+    if (!errors.value.username && !errors.value.password && !errors.value.gender && !errors.value.reason) {
         submittedCards.value.push({ ...formData.value });
         clearForm();
     }
@@ -141,6 +146,15 @@ const validateGender = (blur) => {
         errors.value.gender = null;
     }
 };
+
+const validateReason = (blur) => {
+    if (!formData.value.reason) {
+        if (blur) errors.value.reason = "Entering a reason is mandatory";
+    } else {
+        errors.value.reason = null;
+    }
+};
+
 </script>
 
 <style scoped>
