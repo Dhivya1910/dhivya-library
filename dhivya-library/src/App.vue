@@ -1,46 +1,45 @@
 <script setup>
-import JSONLab from './components/JSONLab.vue'
 import BHeader from './components/BHeader.vue'
-import LibraryRegistrationForm from './views/HomeView.vue' //
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+const isAuthenticated = ref(localStorage.getItem('isAuthenticated') === 'true')
+
+const logout = () => {
+  localStorage.removeItem('isAuthenticated')
+  router.push('/login')
+  isAuthenticated.value = false
+}
 </script>
 
 <template>
   <header>
-    <BHeader />
+    <BHeader />  
   </header>
 
   <main>
-    <!-- <LibraryRegistrationForm /> -->
-    <router-view></router-view>
-    <!-- <JSONLab /> -->
+    <router-view></router-view>  
   </main>
 </template>
 
 <style scoped>
-/* header {
-  line-height: 1.5;
+nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+button {
+  background-color: #42b983;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-} */
+button:hover {
+  background-color: #39a874;
+}
 </style>
