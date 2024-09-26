@@ -1,3 +1,15 @@
+<template>
+  <div id="app">
+    <header>
+      <BHeader />  
+    </header>
+
+    <main>
+      <router-view />  <!-- This renders the routed components -->
+    </main>
+  </div>
+</template>
+
 <script setup>
 import BHeader from './components/BHeader.vue'
 import { ref } from 'vue'
@@ -12,16 +24,6 @@ const logout = () => {
   isAuthenticated.value = false
 }
 </script>
-
-<template>
-  <header>
-    <BHeader />  
-  </header>
-
-  <main>
-    <router-view></router-view>  
-  </main>
-</template>
 
 <style scoped>
 nav {

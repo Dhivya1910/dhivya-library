@@ -12,6 +12,22 @@
         <li class="nav-item">
           <router-link to="/about" class="nav-link" active-class="active">About</router-link>
         </li>
+        <li>
+          <router-link to="/addBook" class="nav-link" active-class="active">Add book</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/FirebaseSigninView" class="nav-link" active-class="active">Firebase Login</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/FirebaseRegisterView" class="nav-link" active-class="active">Firebase Register</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/GetBookCount" class="nav-link" active-class="active">Get Book Count</router-link>
+        </li>
+        <li class="nav-item">
+        <router-link to="/AddBookFirebase" class="nav-link" active-class="active">Add Book using firebase</router-link>
+      </li>
+
       </ul>
     </header>
   </div>

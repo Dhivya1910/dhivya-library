@@ -26,6 +26,7 @@ const goToLogin = () => {
 
 const logout = () => {
   localStorage.removeItem('isAuthenticated')
+  localStorage.removeItem('role')
   router.push('/login')
   isAuthenticated.value = 'false'
 }
